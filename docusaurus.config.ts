@@ -5,20 +5,20 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'zaralX Assets',
+  tagline: 'API For Minecraft Assets',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://assets.zaralx.ru',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'zaralX',
+  projectName: 'zaralx-assets',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/zaralX/zaralx-assets-front/',
         },
         blog: {
           showReadingTime: true,
@@ -68,21 +68,19 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'zaralX Assets',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'zaralx-assets',
         src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: '/minecraft',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Minecraft Assets',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/zaralX/zaralx-assets-front',
           label: 'GitHub',
           position: 'right',
         },
@@ -95,25 +93,29 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Minecraft Assets',
+              to: '/minecraft',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Developer',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Website',
+              href: 'https://zaralx.ru',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Github',
+              href: 'https://github.com/zaralX',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Telegram Channel',
+              href: 'https://underzaral.t.me',
+            },
+            {
+              label: 'Telegram',
+              href: 'https://zWork1.t.me',
             },
           ],
         },
@@ -121,17 +123,17 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'API Repository',
+              href: 'https://github.com/zaralX/zaralx-assets',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'DOCS Repository',
+              href: 'https://github.com/zaralX/zaralx-assets-front',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} zaralX Assets, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
