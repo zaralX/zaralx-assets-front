@@ -43,7 +43,7 @@ function Feature({title, icon, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-          <img className="index-icon" src={icon} alt=""/>
+          <img className={styles.index_icon} src={icon} alt=""/>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
