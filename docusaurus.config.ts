@@ -81,7 +81,7 @@ const config: Config = {
           items: [
             {
               label: 'Minecraft Assets',
-              to: '/minecraft',
+              to: '/docs/minecraft',
             },
           ],
         },
