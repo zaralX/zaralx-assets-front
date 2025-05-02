@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`zaralX Assets`}
+      description="API for some assets. Get minecraft assets in one request">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
