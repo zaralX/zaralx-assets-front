@@ -19,7 +19,7 @@ EXPOSE 3000
 ## Run the development server.
 CMD [ -d "node_modules" ] && npm run start -- --host 0.0.0.0 --poll 1000 || npm install && npm run start -- --host 0.0.0.0 --poll 1000
 
-# Stage 2b: Production build mode.
+# Stage 2: Production build mode.
 FROM base AS prod
 ## Set the working directory to `/opt/docusaurus`.
 WORKDIR /opt/docusaurus
@@ -30,16 +30,11 @@ RUN npm ci
 ## Build the static site.
 RUN npm run build
 
-# Stage 3a: Serve with `docusaurus serve`.
-FROM prod AS serve
-## Expose the port that Docusaurus will run on.
+# Stage 3: Production serve with nginx
+FROM nginx:alpine AS production
+## Copy the built static files from the prod stage
+COPY --from=prod /opt/docusaurus/build /usr/share/nginx/html
+## Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+## Expose the port that nginx will run on
 EXPOSE 3000
-## Run the production server.
-CMD ["npm", "run", "serve", "--", "--host", "0.0.0.0", "--no-open"]
-
-# Stage 3b: Serve with Caddy.
-FROM caddy:2-alpine AS caddy
-## Copy the Caddyfile.
-COPY --from=prod /opt/docusaurus/Caddyfile /etc/caddy/Caddyfile
-## Copy the Docusaurus build output.
-COPY --from=prod /opt/docusaurus/build /var/docusaurus
