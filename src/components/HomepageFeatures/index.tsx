@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
     icon: 'https://assets.zaralx.ru/api/v1/minecraft/vanilla/player/face/11fd94e9706b486e827460c55a55c01b/full',
     description: (
       <>
-        Can be added soon!
+        Get minecraft player face or skin!
       </>
     ),
   },
